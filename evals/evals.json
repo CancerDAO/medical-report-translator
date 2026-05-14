@@ -1,0 +1,41 @@
+{
+  "skill_name": "medical-report-translator",
+  "evals": [
+    {
+      "id": "eval-1",
+      "name": "Pathology report translation",
+      "prompt": "帮我翻译这份病理报告：低分化腺癌，侵及浆膜层，淋巴结转移4/12，脉管侵犯阳性，神经侵犯阴性，切缘阴性。",
+      "expected_output": "Output provides plain language translation including severity assessment and next steps.",
+      "assertions": [
+        "Output explains '低分化' in plain language (恶性程度高)",
+        "Output explains '脉管侵犯阳性' in plain language",
+        "Output gives severity assessment",
+        "Output recommends discussing with doctor"
+      ]
+    },
+    {
+      "id": "eval-2",
+      "name": "Gene testing report translation",
+      "prompt": "帮我看看这个基因报告是什么意思：EGFR L858R突变，TP53突变，MET扩增，TMB 12.5 mut/MB，PD-L1 TPS 60%。",
+      "expected_output": "Output explains each finding in plain language and its significance for treatment.",
+      "assertions": [
+        "Output explains EGFR L858R meaning (靶向药敏感)",
+        "Output explains TMB in plain language",
+        "Output explains PD-L1 TPS 60% meaning",
+        "Output mentions at least one targeted therapy implication"
+      ]
+    },
+    {
+      "id": "eval-3",
+      "name": "Imaging report translation",
+      "prompt": "我的CT报告写的是：右肺上叶肿块3.2cm，双肺多发结节，最大者1.5cm，纵隔淋巴结肿大，右侧少量胸腔积液。这是什么意思？",
+      "expected_output": "Output gives plain summary of imaging findings and staging implications.",
+      "assertions": [
+        "Output describes the main tumor size",
+        "Output mentions multiple lung nodules",
+        "Output explains lymph node involvement",
+        "Output explains pleural effusion significance"
+      ]
+    }
+  ]
+}
